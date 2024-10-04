@@ -1,8 +1,3 @@
-//Janae Sylvester Oliver
-// 10.02.2024
-// Ascii kitten
-
-
 import UIKit
 import PlaygroundSupport
 
@@ -12,13 +7,10 @@ let kittenAscii = """
      > ^ <
 """
 
-let label = UILabel()
-label.font = UIFont(name: "Courier", size: 32)
-label.text = kittenAscii
-label.numberOfLines = 0
-label.sizeToFit()
+let kitten = UILabel()
+kitten.font = UIFont(name: "Courier", size: 32)
+kitten.text = kittenAscii
+kitten.numberOfLines = 0
+kitten.sizeToFit()
 
-
-PlaygroundPage.current.liveView = label
-
-
+PlaygroundPage.current.liveView = kitten
