@@ -6,6 +6,14 @@
 import UIKit
 import PlaygroundSupport
 
+//Janae Sylvester Oliver
+// 10.02.2024
+// Ascii kitten
+
+
+import UIKit
+import PlaygroundSupport
+
 
 let kittenAscii = """
      /\\_/\\  
@@ -21,3 +29,5 @@ label.sizeToFit()
 
 
 PlaygroundPage.current.liveView = label
+
+
