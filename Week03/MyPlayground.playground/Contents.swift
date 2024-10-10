@@ -1,61 +1,60 @@
 import SwiftUI
 
-struct RandomView: View {
-    // Array to hold randomly generated numbers
-    let numberArray = (0..<20).map { _ in "\(Int.random(in: 1...100))" }
+struct RandomPatternView: View {
+    // Grid size for pattern
+    let gridSize = 20
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(numberArray.indices, id: \.self) { index in
-                    let item = numberArray[index]
-                    NavigationLink(destination: NumberView(number: item, index: index)) {
-                        HStack {
-                            Text(item)
-                                .font(.system(size: 40, weight: .bold))
-                                .padding()
-                            Spacer()
-                            Text("Item #\(index + 1)")
-                                .font(.headline)
-                                .foregroundColor(.secondary)
+        GeometryReader { geometry in
+            let width = geometry.size.width
+            let height = geometry.size.height
+            let columns = Int(width / CGFloat(gridSize))
+            let rows = Int(height / CGFloat(gridSize))
+
+            VStack(spacing: 0) {
+                ForEach(0..<rows, id: \.self) { _ in
+                    HStack(spacing: 0) {
+                        ForEach(0..<columns, id: \.self) { _ in
+                            RandomLine()
+                                .frame(width: CGFloat(gridSize), height: CGFloat(gridSize))
                         }
-                        .padding(.vertical, 10)
                     }
                 }
             }
-            .navigationTitle("Random Numbers")
+            .frame(width: width, height: height)
         }
+        .background(Color.black)
     }
 }
 
-struct NumberView: View {
-    let number: String
-    let index: Int
-
+// View that generates a random line
+struct RandomLine: View {
     var body: some View {
-        VStack {
-            Text("Details for Random Number")
-                .font(.title)
-                .padding(.bottom, 20)
-            
-            Text(number)
-                .font(.system(size: 80, weight: .bold))
-                .padding()
-            
-            Text("This is item number \(index + 1) in the list.")
-                .font(.headline)
-                .padding(.top, 10)
+        // Randomly choose between two rotations and colors
+        let isDiagonal = Bool.random()
+        let randomColor = Color(
+            red: Double.random(in: 0.2...1),
+            green: Double.random(in: 0.2...1),
+            blue: Double.random(in: 0.2...1)
+        )
 
-            Spacer()
+        return Rectangle()
+            .fill(randomColor)
+            .frame(width: 20, height: 2)
+            .rotationEffect(.degrees(isDiagonal ? 45 : -45))
+    }
+}
+
+// Preview for SwiftUI canvas
+#Preview {
+    RandomPatternView()
+}
+
+// App entry point
+struct RandomPatternApp: App {
+    var body: some Scene {
+        WindowGroup {
+            RandomPatternView()
         }
-        .navigationTitle("Number \(index + 1)")
-        .padding()
     }
 }
-struct SimpleView_Previews: PreviewProvider {
-    static var previews: some View {
-        RandomView()
-    }
-}
-
-
