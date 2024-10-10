@@ -52,9 +52,10 @@ struct NumberView: View {
         .padding()
     }
 }
-
-// Preview
-#Preview {
-    RandomView()
+struct SimpleView_Previews: PreviewProvider {
+    static var previews: some View {
+        RandomView()
+    }
 }
+
 
