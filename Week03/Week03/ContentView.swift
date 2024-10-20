@@ -1,55 +1,86 @@
 import SwiftUI
 
 struct ContentView: View {
-    // Updated array with only valid SF Symbols for insects
-    let insectArray = ["ant", "ladybug", "tortoise", "leaf", "pawprint"]
+    // SHAPES
+    let shapeArray: [String] = ["Circle", "Rectangle", "Capsule", "Ellipse"]
     
-    // State variables for insect index and element size
-    @State var selectedInsectIndex: Double = 0 // Must be a Double for the slider
-    @State var elementSize = 150.0
+    // SHAPE AND SIZE
+    @State var selectedShapeIndex: Double = 0 // DOUBLE SLIDER
+    @State var shapeSize = 150.0
     
     var body: some View {
-        VStack {
-            // Title or header text
-            Text("Random Animal Symbols ")
-                .font(.title)
-                .padding()
+        ZStack {
+            // BACKGROUND
+            Color.white
+                .ignoresSafeArea()
             
-            // Get the current insect based on the index
-            let currentInsect = insectArray[Int(selectedInsectIndex)] // Convert to Int when accessing the array
-            let randomFillFlag = Bool.random() // Randomly decide if it's filled
-            let randomColor = Color(
-                red: Double.random(in: 0...1),
-                green: Double.random(in: 0...1),
-                blue: Double.random(in: 0...1)
-            )
-            
-            Image(systemName: currentInsect + (randomFillFlag ? ".fill" : ""))
-                .resizable()
-                .frame(width: elementSize, height: elementSize)
-                .foregroundColor(randomColor) // Apply random color
-                .padding()
-            
-            // Slider to change the selected insect
-            VStack {
-                Slider(value: $selectedInsectIndex, in: 0...Double(insectArray.count - 1), step: 1.0) {
-                    Text("Select Insect")
-                }
-                .padding()
+            VStack(spacing: 30) {
+                // TITLE
+                Text("Shape Viewer")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding(.top, 40)
+                    .shadow(radius: 5)
                 
-                Text("Insect: \(insectArray[Int(selectedInsectIndex)].capitalized)")
-            }
-            
-            // Controls to adjust the insect size
-            VStack {
-                Slider(value: $elementSize, in: 50.0...200.0) {
-                    Text("Insect Size")
+                // SHAPE
+                let currentShape = shapeArray[Int(selectedShapeIndex)]
+                let purpleColor = Color.purple // Constant purple color
+                
+                // TRANSITION
+                ZStack {
+                    if currentShape == "Circle" {
+                        Circle()
+                            .fill(purpleColor)
+                            .frame(width: shapeSize, height: shapeSize)
+                    } else if currentShape == "Rectangle" {
+                        Rectangle()
+                            .fill(purpleColor)
+                            .frame(width: shapeSize, height: shapeSize)
+                    } else if currentShape == "Capsule" {
+                        Capsule()
+                            .fill(purpleColor)
+                            .frame(width: shapeSize, height: shapeSize / 2) // CAPSULE
+                    } else if currentShape == "Ellipse" {
+                        Ellipse()
+                            .fill(purpleColor)
+                            .frame(width: shapeSize, height: shapeSize / 1.5)
+                    }
                 }
-                Text("Size: \(Int(elementSize))")
+                .cornerRadius(20)
+                .shadow(radius: 10)
+                .transition(.scale) // TRANSITION EFFECT
+                
+                // SLIDER TO CHANGE SHAPE
+                VStack {
+                    Slider(value: $selectedShapeIndex, in: 0...Double(shapeArray.count - 1), step: 1.0) {
+                        Text("Select Shape")
+                    }
+                    .padding(.horizontal, 40)
+                    .accentColor(.orange)
+                    
+                    Text("Shape: \(shapeArray[Int(selectedShapeIndex)])")
+                        .font(.title2)
+                        .fontWeight(.medium)
+                        .foregroundColor(.black)
+                }
+                
+                // CONTROLLING SHAPE SIZE
+                VStack {
+                    Slider(value: $shapeSize, in: 50.0...250.0) {
+                        Text("Shape Size")
+                    }
+                    .padding(.horizontal, 40)
+                    .accentColor(.green)
+                    
+                    Text("Size: \(Int(shapeSize))")
+                        .font(.title2)
+                        .fontWeight(.medium)
+                        .foregroundColor(.black)
+                }
             }
             .padding()
         }
-        .padding()
     }
 }
 
