@@ -7,11 +7,11 @@ import SwiftUI
 struct NotHungrySoundPlayerView: View {
     @State var audioPlayer: AVPlayer?
 
-    let notHungrySoundURL = "https://pixabay.com/sound-effects/ocean-wave-14547/"
+    let notHungrySoundURL = "https://pixabay.com/sound-effects/happy-days-123082/"
 
     var body: some View {
         VStack {
-            Text("Relaxing Sound")
+            Text("Sounds Great")
                 .font(.largeTitle)
                 .padding(.bottom, 20)
 
@@ -40,6 +40,7 @@ struct NotHungrySoundPlayerView: View {
         }
         audioPlayer = AVPlayer(url: soundURL)
         audioPlayer?.play()
+        print("audioPlayer", audioPlayer ?? "missing")
     }
 }
 
