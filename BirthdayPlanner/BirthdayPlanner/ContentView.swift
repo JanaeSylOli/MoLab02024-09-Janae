@@ -69,6 +69,7 @@ struct ContentView: View {
         let urlString = "https://www.boredapi.com/api/activity?type=\(activityType)&participants=\(participants)"
         guard let url = URL(string: urlString) else {
             isLoading = false
+            print("Invalid URL")
             return
         }
 
@@ -76,7 +77,7 @@ struct ContentView: View {
             isLoading = false
 
             if let error = error {
-                print("Error fetching activity: \(error)")
+                print("Error fetching activity: \(error.localizedDescription)")
                 return
             }
 
@@ -85,13 +86,17 @@ struct ContentView: View {
                 return
             }
 
+            // Log the raw response
+            print("Raw response: \(String(data: data, encoding: .utf8) ?? "No response")")
+
+            // Attempt to decode the JSON response
             do {
                 let result = try JSONDecoder().decode(Activity.self, from: data)
                 DispatchQueue.main.async {
                     self.activity = result.activity
                 }
             } catch {
-                print("Error decoding JSON: \(error)")
+                print("Error decoding JSON: \(error.localizedDescription)")
             }
         }.resume()
     }
