@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Week06
+//  Week06-BirthdayPlanner-Final
 //
-//  Created by Janae  Sylvester Oliver on 11/5/24.
+//  Created by Janae  Sylvester Oliver on 11/30/24.
 //
 
 import SwiftUI
