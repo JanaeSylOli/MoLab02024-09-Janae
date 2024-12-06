@@ -10,13 +10,16 @@ struct ContentView: View {
     var body: some View {
         NavigationWrapper {
             VStack {
-                Text("")
+                Text("Welcome to BDay Planner!")
                     .font(.largeTitle)
                     .padding()
             }
         }
     }
 }
+
+
+
 
 
 #Preview {

@@ -33,8 +33,10 @@ struct BirthdayPlanGeneratorView: View {
                     let newPlan = BirthdayPlan(id: UUID(), theme: theme, activities: activities)
                     savePlan(newPlan)
                 }
+                .buttonStyle(.borderedProminent)
                 .padding()
             }
+            .navigationTitle("Plan Generator")
         }
     }
 }

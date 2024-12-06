@@ -4,10 +4,12 @@ struct HomeView: View {
     var body: some View {
         NavigationWrapper {
             VStack {
-                Text("Home Page")
+                Text("Welcome to the Home Page!")
                     .font(.largeTitle)
                     .padding()
             }
+            .navigationTitle("Home") // Title for the navigation bar
         }
     }
 }
+
