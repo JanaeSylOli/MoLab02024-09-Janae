@@ -1,0 +1,187 @@
+{
+    "birthdayPlans": [
+      {
+        "theme": "Adventure",
+        "activities": [
+          {
+            "name": "Hiking at Green Valley",
+            "location": "Green Valley National Park",
+            "budget": 50,
+            "description": "A scenic hiking trail with guided tours and picnic spots.",
+            "time": "10:00 AM - 3:00 PM"
+          },
+          {
+            "name": "Rock Climbing",
+            "location": "High Peak Rock Gym",
+            "budget": 30,
+            "description": "A beginner-friendly rock climbing experience.",
+            "time": "1:00 PM - 4:00 PM"
+          },
+          {
+            "name": "Zip Lining",
+            "location": "Eagle Heights Adventure Park",
+            "budget": 70,
+            "description": "Fly through the trees on an exhilarating zip line course.",
+            "time": "9:00 AM - 12:00 PM"
+          }
+        ]
+      },
+      {
+        "theme": "Relaxation",
+        "activities": [
+          {
+            "name": "Spa Day",
+            "location": "Tranquil Spa",
+            "budget": 100,
+            "description": "Full-body massages, facials, and a sauna experience.",
+            "time": "9:00 AM - 2:00 PM"
+          },
+          {
+            "name": "Beach Picnic",
+            "location": "Sunny Shore Beach",
+            "budget": 20,
+            "description": "A relaxing day by the ocean with food and drinks.",
+            "time": "11:00 AM - 5:00 PM"
+          },
+          {
+            "name": "Yoga Retreat",
+            "location": "Harmony Wellness Center",
+            "budget": 50,
+            "description": "A rejuvenating day of yoga and meditation.",
+            "time": "7:00 AM - 11:00 AM"
+          }
+        ]
+      },
+      {
+        "theme": "Foodie",
+        "activities": [
+          {
+            "name": "Wine Tasting",
+            "location": "Vineyard 101",
+            "budget": 40,
+            "description": "Taste premium wines with a guided tour.",
+            "time": "12:00 PM - 3:00 PM"
+          },
+          {
+            "name": "Food Truck Tour",
+            "location": "Downtown Plaza",
+            "budget": 25,
+            "description": "Explore various cuisines from local food trucks.",
+            "time": "6:00 PM - 9:00 PM"
+          },
+          {
+            "name": "Cooking Class",
+            "location": "Gourmet Academy",
+            "budget": 60,
+            "description": "Learn to cook a three-course meal with a professional chef.",
+            "time": "4:00 PM - 7:00 PM"
+          }
+        ]
+      },
+      {
+        "theme": "Entertainment",
+        "activities": [
+          {
+            "name": "Movie Night",
+            "location": "Galaxy Cinema",
+            "budget": 15,
+            "description": "Watch the latest blockbuster with friends.",
+            "time": "7:00 PM - 9:30 PM"
+          },
+          {
+            "name": "Comedy Show",
+            "location": "Laugh Lounge",
+            "budget": 30,
+            "description": "Enjoy an evening of laughs with top comedians.",
+            "time": "8:00 PM - 10:00 PM"
+          },
+          {
+            "name": "Karaoke Night",
+            "location": "Sing Along Bar",
+            "budget": 20,
+            "description": "Sing your heart out with friends.",
+            "time": "9:00 PM - 12:00 AM"
+          }
+        ]
+      },
+      {
+        "theme": "Creative",
+        "activities": [
+          {
+            "name": "Painting Workshop",
+            "location": "Artistic Expressions Studio",
+            "budget": 40,
+            "description": "Create a masterpiece while sipping wine.",
+            "time": "2:00 PM - 5:00 PM"
+          },
+          {
+            "name": "Pottery Class",
+            "location": "Craft Corner",
+            "budget": 35,
+            "description": "Learn to make your own pottery from scratch.",
+            "time": "10:00 AM - 12:00 PM"
+          },
+          {
+            "name": "DIY Craft Party",
+            "location": "Your Home",
+            "budget": 15,
+            "description": "Host a crafting session with supplies provided.",
+            "time": "3:00 PM - 6:00 PM"
+          }
+        ]
+      },
+      {
+        "theme": "Family Fun",
+        "activities": [
+          {
+            "name": "Zoo Day",
+            "location": "Wildlife Zoo",
+            "budget": 25,
+            "description": "Explore the animal kingdom with family and friends.",
+            "time": "9:00 AM - 2:00 PM"
+          },
+          {
+            "name": "Amusement Park",
+            "location": "FunLand Park",
+            "budget": 50,
+            "description": "Thrill rides and carnival games for all ages.",
+            "time": "10:00 AM - 6:00 PM"
+          },
+          {
+            "name": "Bowling",
+            "location": "Lucky Strike Lanes",
+            "budget": 20,
+            "description": "A fun game of bowling with snacks and music.",
+            "time": "6:00 PM - 9:00 PM"
+          }
+        ]
+      },
+      {
+        "theme": "Luxury",
+        "activities": [
+          {
+            "name": "Private Yacht Cruise",
+            "location": "Harbor Marina",
+            "budget": 300,
+            "description": "Sail in style with food and drinks included.",
+            "time": "4:00 PM - 8:00 PM"
+          },
+          {
+            "name": "Fine Dining",
+            "location": "The Gourmet Table",
+            "budget": 150,
+            "description": "A five-star dining experience with a curated menu.",
+            "time": "7:00 PM - 9:30 PM"
+          },
+          {
+            "name": "Helicopter Ride",
+            "location": "Sky Adventures Heliport",
+            "budget": 400,
+            "description": "A breathtaking aerial view of the city.",
+            "time": "5:00 PM - 6:00 PM"
+          }
+        ]
+      }
+    ]
+  }
+  
