@@ -36,7 +36,6 @@ struct BirthdayPlanGeneratorView: View {
                 .buttonStyle(.borderedProminent)
                 .padding()
             }
-            .navigationTitle("Plan Generator")
         }
     }
 }

@@ -31,7 +31,7 @@ struct NavigationWrapper<Content: View>: View {
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 5)
-                .offset(x: -45, y: -320)  // Adjust position of the menu
+                .offset(x: -45, y: -320) // Adjust position of the menu
             }
         }
         .toolbar {
