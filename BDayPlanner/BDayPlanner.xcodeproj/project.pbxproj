@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		D8B919E12CF0E94B00D28408 /* BirthdayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D865A3242D0297F20008EBCE /* BDayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D8B919E32CF0E94B00D28408 /* BirthdayPlanner */ = {
+		D865A3262D0297F20008EBCE /* BDayPlanner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BirthdayPlanner;
+			path = BDayPlanner;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8B919DE2CF0E94B00D28408 /* Frameworks */ = {
+		D865A3212D0297F20008EBCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8B919D82CF0E94B00D28408 = {
+		D865A31B2D0297F20008EBCE = {
 			isa = PBXGroup;
 			children = (
-				D8B919E32CF0E94B00D28408 /* BirthdayPlanner */,
-				D8B919E22CF0E94B00D28408 /* Products */,
+				D865A3262D0297F20008EBCE /* BDayPlanner */,
+				D865A3252D0297F20008EBCE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D8B919E22CF0E94B00D28408 /* Products */ = {
+		D865A3252D0297F20008EBCE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8B919E12CF0E94B00D28408 /* BirthdayPlanner.app */,
+				D865A3242D0297F20008EBCE /* BDayPlanner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8B919E02CF0E94B00D28408 /* BirthdayPlanner */ = {
+		D865A3232D0297F20008EBCE /* BDayPlanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8B919EF2CF0E94C00D28408 /* Build configuration list for PBXNativeTarget "BirthdayPlanner" */;
+			buildConfigurationList = D865A3322D0297F40008EBCE /* Build configuration list for PBXNativeTarget "BDayPlanner" */;
 			buildPhases = (
-				D8B919DD2CF0E94B00D28408 /* Sources */,
-				D8B919DE2CF0E94B00D28408 /* Frameworks */,
-				D8B919DF2CF0E94B00D28408 /* Resources */,
+				D865A3202D0297F20008EBCE /* Sources */,
+				D865A3212D0297F20008EBCE /* Frameworks */,
+				D865A3222D0297F20008EBCE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D8B919E32CF0E94B00D28408 /* BirthdayPlanner */,
+				D865A3262D0297F20008EBCE /* BDayPlanner */,
 			);
-			name = BirthdayPlanner;
+			name = BDayPlanner;
 			packageProductDependencies = (
 			);
-			productName = BirthdayPlanner;
-			productReference = D8B919E12CF0E94B00D28408 /* BirthdayPlanner.app */;
+			productName = BDayPlanner;
+			productReference = D865A3242D0297F20008EBCE /* BDayPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D8B919D92CF0E94B00D28408 /* Project object */ = {
+		D865A31C2D0297F20008EBCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					D8B919E02CF0E94B00D28408 = {
+					D865A3232D0297F20008EBCE = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = D8B919DC2CF0E94B00D28408 /* Build configuration list for PBXProject "BirthdayPlanner" */;
+			buildConfigurationList = D865A31F2D0297F20008EBCE /* Build configuration list for PBXProject "BDayPlanner" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D8B919D82CF0E94B00D28408;
+			mainGroup = D865A31B2D0297F20008EBCE;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D8B919E22CF0E94B00D28408 /* Products */;
+			productRefGroup = D865A3252D0297F20008EBCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8B919E02CF0E94B00D28408 /* BirthdayPlanner */,
+				D865A3232D0297F20008EBCE /* BDayPlanner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D8B919DF2CF0E94B00D28408 /* Resources */ = {
+		D865A3222D0297F20008EBCE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D8B919DD2CF0E94B00D28408 /* Sources */ = {
+		D865A3202D0297F20008EBCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D8B919ED2CF0E94C00D28408 /* Debug */ = {
+		D865A3302D0297F40008EBCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		D8B919EE2CF0E94C00D28408 /* Release */ = {
+		D865A3312D0297F40008EBCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,14 +244,14 @@
 			};
 			name = Release;
 		};
-		D8B919F02CF0E94C00D28408 /* Debug */ = {
+		D865A3332D0297F40008EBCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BirthdayPlanner/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BDayPlanner/Preview Content\"";
 				DEVELOPMENT_TEAM = SCVLR6Z3M3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -265,7 +265,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Final-Project.BirthdayPlanner";
+				PRODUCT_BUNDLE_IDENTIFIER = Final.BDayPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -273,14 +273,14 @@
 			};
 			name = Debug;
 		};
-		D8B919F12CF0E94C00D28408 /* Release */ = {
+		D865A3342D0297F40008EBCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BirthdayPlanner/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BDayPlanner/Preview Content\"";
 				DEVELOPMENT_TEAM = SCVLR6Z3M3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -294,7 +294,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Final-Project.BirthdayPlanner";
+				PRODUCT_BUNDLE_IDENTIFIER = Final.BDayPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -305,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8B919DC2CF0E94B00D28408 /* Build configuration list for PBXProject "BirthdayPlanner" */ = {
+		D865A31F2D0297F20008EBCE /* Build configuration list for PBXProject "BDayPlanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8B919ED2CF0E94C00D28408 /* Debug */,
-				D8B919EE2CF0E94C00D28408 /* Release */,
+				D865A3302D0297F40008EBCE /* Debug */,
+				D865A3312D0297F40008EBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8B919EF2CF0E94C00D28408 /* Build configuration list for PBXNativeTarget "BirthdayPlanner" */ = {
+		D865A3322D0297F40008EBCE /* Build configuration list for PBXNativeTarget "BDayPlanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8B919F02CF0E94C00D28408 /* Debug */,
-				D8B919F12CF0E94C00D28408 /* Release */,
+				D865A3332D0297F40008EBCE /* Debug */,
+				D865A3342D0297F40008EBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D8B919D92CF0E94B00D28408 /* Project object */;
+	rootObject = D865A31C2D0297F20008EBCE /* Project object */;
 }
