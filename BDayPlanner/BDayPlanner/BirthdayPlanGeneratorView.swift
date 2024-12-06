@@ -1,41 +1,90 @@
 import SwiftUI
 
 struct BirthdayPlanGeneratorView: View {
-    @State private var theme: String = ""
-    @State private var activities: [Activity] = []
+    @State private var theme: String = "" // User-inputted theme
+    @State private var activity: String? // Fetched activity
+    @State private var isLoading: Bool = false // Loading state
+    @State private var errorMessage: String? // Error message
 
     var body: some View {
         NavigationWrapper {
-            VStack {
+            VStack(spacing: 20) {
+                // Theme input
                 TextField("Enter a Theme", text: $theme)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
-                Button("Generate Random Plan") {
-                    if let randomPlan = loadPlans().randomElement() {
-                        activities = randomPlan.activities
-                    }
+                // Generate Button
+                Button(action: {
+                    fetchRandomActivity()
+                }) {
+                    Text("Generate Random Plan")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
                 }
-                .padding()
+                .disabled(isLoading) // Disable button while loading
+                
+                // Loading Indicator
+                if isLoading {
+                    ProgressView("Loading...")
+                }
 
-                List(activities) { activity in
-                    VStack(alignment: .leading) {
-                        Text(activity.name)
-                            .font(.headline)
-                        Text(activity.description)
-                        Text("Budget: \(activity.budget)$")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
+                // Display Activity
+                if let activity = activity {
+                    Text("Activity: \(activity)")
+                        .font(.title2)
+                        .padding()
                 }
 
-                Button("Save Plan") {
-                    let newPlan = BirthdayPlan(id: UUID(), theme: theme, activities: activities)
-                    savePlan(newPlan)
+                // Display Error Message
+                if let errorMessage = errorMessage {
+                    Text("Error: \(errorMessage)")
+                        .foregroundColor(.red)
+                        .padding()
                 }
-                .buttonStyle(.borderedProminent)
-                .padding()
             }
+            .navigationTitle("Plan Generator")
+            .padding()
         }
     }
+
+    /// Fetch a random activity from the Bored API
+    func fetchRandomActivity() {
+        isLoading = true
+        errorMessage = nil
+        activity = nil
+
+        let url = URL(string: "https://www.boredapi.com/api/activity")!
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            DispatchQueue.main.async {
+                isLoading = false
+
+                if let error = error {
+                    errorMessage = "Network error: \(error.localizedDescription)"
+                    return
+                }
+
+                guard let data = data else {
+                    errorMessage = "No data received"
+                    return
+                }
+
+                do {
+                    let result = try JSONDecoder().decode(ActivityResponse.self, from: data)
+                    activity = result.activity
+                } catch {
+                    errorMessage = "Failed to decode response: \(error.localizedDescription)"
+                }
+            }
+        }.resume()
+    }
 }
+
+// API Response Model
+struct ActivityResponse: Codable {
+    let activity: String
+}
+

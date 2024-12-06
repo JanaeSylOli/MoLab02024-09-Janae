@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "birthday_plans.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
