@@ -16,7 +16,7 @@ struct BirthdayPlanGeneratorView: View {
 
                 // Generate Button
                 Button(action: {
-                    fetchRandomActivity()
+                    findRandomActivity()
                 }) {
                     Text("Generate Random Plan")
                         .padding()
@@ -49,42 +49,71 @@ struct BirthdayPlanGeneratorView: View {
             .padding()
         }
     }
+    
+    func findRandomActivity(){
+        print("console.log")
+        if let path = Bundle.main.path(forResource: "birthday_plans", ofType: "json") {
+            do {
+                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                  if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let allPlans = jsonResult["birthdayPlans"] as? [Any] {
+                            // do stuff
+                      print(allPlans)
+                  }
+                print(jsonResult)
+              } catch {
+                  print("error")// handle error
+              }
+        }
+        }
+    }
 
     /// Fetch a random activity from the Bored API
-    func fetchRandomActivity() {
-        isLoading = true
-        errorMessage = nil
-        activity = nil
-
-        let url = URL(string: "https://www.boredapi.com/api/activity")!
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            DispatchQueue.main.async {
-                isLoading = false
-
-                if let error = error {
-                    errorMessage = "Network error: \(error.localizedDescription)"
-                    return
-                }
-
-                guard let data = data else {
-                    errorMessage = "No data received"
-                    return
-                }
-
-                do {
-                    let result = try JSONDecoder().decode(ActivityResponse.self, from: data)
-                    activity = result.activity
-                } catch {
-                    errorMessage = "Failed to decode response: \(error.localizedDescription)"
-                }
-            }
-        }.resume()
-    }
-}
+//    func fetchRandomActivity() {
+//        isLoading = true
+//        errorMessage = nil
+//        activity = nil
+//
+//        let url = URL(string: "https://www.boredapi.com/api/activity")!
+//
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            DispatchQueue.main.async {
+//                isLoading = false
+//
+//                if let error = error {
+//                    errorMessage = "Network error: \(error.localizedDescription)"
+//                    return
+//                }
+//
+//                guard let data1 = data else {
+//                    errorMessage = "No data received"
+//                    return
+//                }
+//                print(data1)
+//                
+//                guard let response = response else {
+//                    errorMessage = "No data received"
+//                    return
+//                }
+//                print(response)
+//
+//
+//                do {
+//                    let result = try JSONDecoder().decode(ActivityResponse.self, from: data1)
+//                    activity = result.activity
+//                } catch {
+//                    errorMessage = "xFailed to decode response: \(error.localizedDescription)"
+//                }
+//            }
+//        }.resume()
+//    }
+//}
 
 // API Response Model
 struct ActivityResponse: Codable {
     let activity: String
 }
 
+#Preview {
+    BirthdayPlanGeneratorView()
+}

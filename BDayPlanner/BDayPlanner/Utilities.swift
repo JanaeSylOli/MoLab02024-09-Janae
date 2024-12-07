@@ -63,6 +63,7 @@ func sharePlan(plan: BirthdayPlan) {
 
 /// Load plans from a local JSON file
 func loadPlans() -> [BirthdayPlan] {
+    print("loadPlans")
     guard let url = Bundle.main.url(forResource: "birthday_plans", withExtension: "json") else {
         print("JSON file not found in the app bundle.")
         return []
@@ -74,7 +75,7 @@ func loadPlans() -> [BirthdayPlan] {
         print("Plans loaded from JSON successfully.")
         return plans
     } catch {
-        print("Error loading plans from JSON: \(error.localizedDescription)")
+        print("Error loading plans from - JSON: \(error.localizedDescription)")
         return []
     }
 }
