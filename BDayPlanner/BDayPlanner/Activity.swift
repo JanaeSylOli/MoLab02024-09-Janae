@@ -4,10 +4,7 @@
 //
 //  Created by Janae  Sylvester Oliver on 12/5/24.
 //
-import Foundation
-
-struct Activity: Identifiable {
-    let id = UUID() // Unique ID for SwiftUI List usage
+struct Activity: Codable {
     let name: String
     let location: String
     let budget: Double
