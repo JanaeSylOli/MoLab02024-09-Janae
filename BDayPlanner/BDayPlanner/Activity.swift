@@ -6,10 +6,11 @@
 //
 import Foundation
 
-struct Activity: Codable, Identifiable {
-    let id: UUID
+struct Activity: Identifiable {
+    let id = UUID() // Unique ID for SwiftUI List usage
     let name: String
     let location: String
-    let budget: Int
+    let budget: Double
     let description: String
+    let time: String
 }

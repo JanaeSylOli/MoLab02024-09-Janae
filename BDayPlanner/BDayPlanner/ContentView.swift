@@ -9,7 +9,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .padding()
                 }
-                .navigationTitle("Main Menu") // Title for the navigation bar
+                
             }
         }
     }
