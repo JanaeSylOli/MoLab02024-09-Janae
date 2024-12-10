@@ -8,11 +8,7 @@
 
 import Foundation
 
-struct BirthdayPlansWrapper: Codable {
-    let birthdayPlans: [BirthdayPlan]
-}
-
-struct BirthdayPlan: Codable {
-    let theme: String
-    let activities: [Activity]
+struct BirthdayPlan: Codable
+{ let theme: String
+  let activities: [Activity]
 }

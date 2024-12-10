@@ -1,11 +1,9 @@
-//
-//  Activity.swift
-//  BDayPlanner
-//
-//  Created by Janae  Sylvester Oliver on 12/5/24.
-//
 import Foundation
 
+struct BirthdayPlan: Codable {
+    let theme: String
+    let activities: [Activity]
+}
 
 struct Activity: Codable {
     let name: String
@@ -14,4 +12,3 @@ struct Activity: Codable {
     let description: String
     let time: String
 }
-

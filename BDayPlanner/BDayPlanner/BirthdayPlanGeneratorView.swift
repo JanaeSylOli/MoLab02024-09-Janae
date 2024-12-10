@@ -1,56 +1,51 @@
 import SwiftUI
 
 struct BirthdayPlanGeneratorView: View {
-    @Binding var savedPlans: [BirthdayPlan]
-    @State private var selectedActivity: Activity?
+    let savedPlans: [BirthdayPlan]
     @State private var selectedTheme: String = ""
+    @State private var generatedPlan: Activity?
     @State private var errorMessage: String?
 
     var body: some View {
         VStack {
-            TextField("Enter a theme", text: $selectedTheme)
+            TextField("Enter a theme (e.g., Adventure)", text: $selectedTheme)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
-                .padding(.horizontal)
+                .padding()
 
             Button(action: generatePlan) {
-                Text("Generate Random Plan")
+                Text("Generate Plan")
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
-            .padding()
 
-            if let activity = selectedActivity {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Activity: \(activity.name)")
-                        .font(.headline)
-                    Text("Location: \(activity.location)")
-                    Text("Budget: $\(activity.budget, specifier: "%.2f")")
-                    Text("Description: \(activity.description)")
-                    Text("Time: \(activity.time)")
+            if let plan = generatedPlan {
+                VStack(alignment: .leading) {
+                    Text("Activity: \(plan.name)")
+                    Text("Location: \(plan.location)")
+                    Text("Budget: $\(plan.budget, specifier: "%.2f")")
+                    Text("Description: \(plan.description)")
+                    Text("Time: \(plan.time)")
                 }
                 .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-            } else if let errorMessage = errorMessage {
-                Text("Error: \(errorMessage)")
+            } else if let error = errorMessage {
+                Text(error)
                     .foregroundColor(.red)
-                    .padding()
             }
         }
         .navigationTitle("Plan Generator")
     }
 
-    private func generatePlan() {
-        guard let plan = savedPlans.first(where: { $0.theme.lowercased() == selectedTheme.lowercased() }) else {
+    func generatePlan() {
+        guard let plan = savedPlans.first(where: { $0.theme.lowercased() == selectedTheme.lowercased() })?.activities.randomElement() else {
             errorMessage = "No plans found for theme: \(selectedTheme)"
-            selectedActivity = nil
+            generatedPlan = nil
             return
         }
-        selectedActivity = plan.activities.randomElement()
+        generatedPlan = plan
         errorMessage = nil
     }
 }

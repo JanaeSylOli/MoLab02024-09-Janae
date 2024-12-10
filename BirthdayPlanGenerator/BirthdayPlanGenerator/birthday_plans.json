@@ -1,0 +1,63 @@
+{
+    "birthdayPlans": [
+      {
+        "theme": "Adventure",
+        "activities": [
+          {
+            "name": "Hiking at Green Valley",
+            "location": "Green Valley National Park",
+            "budget": 50,
+            "description": "A scenic hiking trail with guided tours and picnic spots.",
+            "time": "10:00 AM - 3:00 PM"
+          },
+          {
+            "name": "Rock Climbing",
+            "location": "High Peak Rock Gym",
+            "budget": 30,
+            "description": "A beginner-friendly rock climbing experience.",
+            "time": "1:00 PM - 4:00 PM"
+          }
+        ]
+      },
+      {
+        "theme": "Relaxation",
+        "activities": [
+          {
+            "name": "Spa Day",
+            "location": "Tranquil Spa",
+            "budget": 100,
+            "description": "Full-body massages, facials, and a sauna experience.",
+            "time": "9:00 AM - 2:00 PM"
+          },
+          {
+            "name": "Beach Picnic",
+            "location": "Sunny Shore Beach",
+            "budget": 20,
+            "description": "A relaxing day by the ocean with food and drinks.",
+            "time": "11:00 AM - 5:00 PM"
+          }
+        ]
+      },
+      {
+        "theme": "Foodie",
+        "activities": [
+          {
+            "name": "Wine Tasting",
+            "location": "Vineyard 101",
+            "budget": 40,
+            "description": "Taste premium wines with a guided tour.",
+            "time": "12:00 PM - 3:00 PM"
+          },
+          {
+            "name": "Food Truck Tour",
+            "location": "Downtown Plaza",
+            "budget": 25,
+            "description": "Explore various cuisines from local food trucks.",
+            "time": "6:00 PM - 9:00 PM"
+          }
+        ]
+      }
+    ]
+  }
+  
+

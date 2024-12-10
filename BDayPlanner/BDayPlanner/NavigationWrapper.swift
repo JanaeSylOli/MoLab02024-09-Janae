@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NavigationWrapper<Content: View>: View {
-    @State private var showMenu = false
+    @State private var showMenu = false // Controls the menu visibility
     let savedPlans: [BirthdayPlan]
     let content: Content
 
@@ -12,17 +12,16 @@ struct NavigationWrapper<Content: View>: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // Main content
+            // Main Content
             content
-                .padding()
 
-            // Hamburger menu
+            // Hamburger Menu
             if showMenu {
                 VStack(alignment: .leading, spacing: 10) {
                     NavigationLink(destination: ContentView(savedPlans: savedPlans)) {
                         Text("Home")
                     }
-                    NavigationLink(destination: BirthdayPlanGeneratorView(savedPlans: $savedPlans)) {
+                    NavigationLink(destination: BirthdayPlanGeneratorView(savedPlans: savedPlans)) {
                         Text("Birthday Plan Generator")
                     }
                     NavigationLink(destination: UtilitiesView(savedPlans: savedPlans)) {
@@ -33,14 +32,12 @@ struct NavigationWrapper<Content: View>: View {
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 5)
-                .offset(x: 0, y: 70) // Adjust position of the menu
+                .offset(x: 0, y: 70) // Position the menu
             }
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    showMenu.toggle()
-                }) {
+                Button(action: { showMenu.toggle() }) {
                     Image(systemName: "line.horizontal.3")
                         .imageScale(.large)
                 }

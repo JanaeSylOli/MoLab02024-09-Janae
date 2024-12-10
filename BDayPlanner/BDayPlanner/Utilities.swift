@@ -1,25 +1,12 @@
 import Foundation
 
-class Utilities {
-    private let userDefaultsKey = "SavedPlans"
-    
-    func savePlans(_ plans: [BirthdayPlan]) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(plans) {
-            UserDefaults.standard.set(encoded, forKey: userDefaultsKey)
-        }
-    }
-    
-    func loadPlans() -> [BirthdayPlan] {
-        let decoder = JSONDecoder()
-        if let savedData = UserDefaults.standard.data(forKey: userDefaultsKey),
-           let loadedPlans = try? decoder.decode([BirthdayPlan].self, from: savedData) {
-            return loadedPlans
-        }
+func loadJSONData() -> [BirthdayPlan] {
+    guard let url = Bundle.main.url(forResource: "birthday_plans", withExtension: "json"),
+          let data = try? Data(contentsOf: url),
+          let birthdayPlans = try? JSONDecoder().decode([BirthdayPlan].self, from: data) else {
+        print("Failed to load JSON data.")
         return []
     }
-    
-    func clearSavedPlans() {
-        UserDefaults.standard.removeObject(forKey: userDefaultsKey)
-    }
+    return birthdayPlans
 }
+
