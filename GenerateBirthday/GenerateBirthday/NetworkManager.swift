@@ -4,7 +4,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     private let apiKey = "AIzaSyAL90XaanV66tjaOyco9C1jt0n6yZmRA0c"
 
-    func fetchActivities(for theme: String, completion: @escaping ([Activity]?) -> Void) {
+    func fetchPlaces(for theme: String, completion: @escaping ([Place]?) -> Void) {
         let urlString = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=\(theme)&location=40.7128,-74.0060&radius=5000&key=\(apiKey)"
         guard let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
             completion(nil)
@@ -13,6 +13,7 @@ class NetworkManager {
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
+                print("Error fetching data: \(String(describing: error))")
                 completion(nil)
                 return
             }
@@ -20,30 +21,25 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(PlacesResponse.self, from: data)
-                let activities = result.results.map { place -> Activity in
-                    return Activity(
-                        name: place.name,
-                        location: place.formatted_address ?? "Unknown",
-                        budget: Int.random(in: 10...100), // Example budget calculation
-                        description: place.types.first ?? "No description",
-                        time: "Varies"
+                var places = [Place]()
+                for placeDetails in result.results {
+                    let place = Place(
+                        id: placeDetails.place_id,
+                        name: placeDetails.name,
+                        location: placeDetails.formatted_address ?? "Unknown",
+                        budget: Int.random(in: 10...100),
+                        description: placeDetails.types.first ?? "No description",
+                        time: "Varies",
+                        website: placeDetails.website
                     )
+                    places.append(place)
                 }
-                completion(activities)
+                completion(places)
             } catch {
+                print("Error decoding JSON: \(error)")
                 completion(nil)
             }
         }
         task.resume()
     }
-}
-
-struct PlacesResponse: Codable {
-    let results: [Place]
-}
-
-struct Place: Codable {
-    let name: String
-    let formatted_address: String?
-    let types: [String]
 }

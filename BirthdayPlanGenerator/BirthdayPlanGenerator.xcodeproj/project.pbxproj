@@ -40,13 +40,12 @@
 		8777D062D10A5B104F8A485A /* Pods_BirthdayPlanGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirthdayPlanGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905B0EF42C2555986FE028F2 /* Pods-BirthdayPlanGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdayPlanGenerator.debug.xcconfig"; path = "Target Support Files/Pods-BirthdayPlanGenerator/Pods-BirthdayPlanGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		D8659B092D07D558009CEE40 /* BirthdayPlanGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayPlanGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D867447D2D09AFB900414D8D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D8659B0B2D07D558009CEE40 /* BirthdayPlanGenerator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = BirthdayPlanGenerator;
 			sourceTree = "<group>";
 		};
@@ -95,7 +94,6 @@
 				905B0EF42C2555986FE028F2 /* Pods-BirthdayPlanGenerator.debug.xcconfig */,
 				272184AF7CDEC40F64633D5A /* Pods-BirthdayPlanGenerator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,6 +119,13 @@
 			isa = PBXGroup;
 			children = (
 				D8659B092D07D558009CEE40 /* BirthdayPlanGenerator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D867447F2D09AFB900414D8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +212,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D8659B0A2D07D558009CEE40 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D867447F2D09AFB900414D8D /* Products */;
+					ProjectRef = D867447D2D09AFB900414D8D /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D8659B082D07D558009CEE40 /* BirthdayPlanGenerator */,
