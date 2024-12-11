@@ -1,0 +1,6 @@
+framework module Pods_BirthdayPlanGenerator {
+  umbrella header "Pods-BirthdayPlanGenerator-umbrella.h"
+
+  export *
+  module * { export * }
+}

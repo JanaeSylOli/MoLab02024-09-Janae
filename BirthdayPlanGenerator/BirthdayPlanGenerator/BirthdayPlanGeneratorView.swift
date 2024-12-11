@@ -3,13 +3,14 @@ import SwiftUI
 struct BirthdayPlanGeneratorView: View {
     @State private var inputTheme: String = ""
     @State private var generatedPlan: [Activity] = []
-    private let plans = DataLoader().loadBirthdayPlans() ?? []
+    @State private var isLoading = false
 
     var body: some View {
         VStack(spacing: 20) {
             TextField("Enter plan theme", text: $inputTheme)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .frame(maxWidth: 300)
 
             Button(action: generatePlan) {
                 Text("Generate Plan")
@@ -19,8 +20,14 @@ struct BirthdayPlanGeneratorView: View {
                     .cornerRadius(8)
             }
 
-            List(generatedPlan, id: \.name) { activity in
-                ActivityCard(activity: activity)
+            if isLoading {
+                ProgressView()
+                    .padding()
+            } else {
+                List(generatedPlan, id: \.name) { activity in
+                    ActivityCard(activity: activity)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .padding()
@@ -28,10 +35,14 @@ struct BirthdayPlanGeneratorView: View {
     }
 
     private func generatePlan() {
-        if let selectedPlan = plans.first(where: { $0.theme.lowercased() == inputTheme.lowercased() }) {
-            generatedPlan = selectedPlan.activities
-        } else {
-            generatedPlan = []
+        isLoading = true
+        NetworkManager.shared.fetchActivities(for: inputTheme) { activities in
+            isLoading = false
+            if let activities = activities {
+                generatedPlan = activities
+            } else {
+                generatedPlan = []
+            }
         }
     }
 }

@@ -32,15 +32,21 @@
 		D8659B4A2D07DBCF009CEE40 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D8659B492D07DBCF009CEE40 /* FirebaseStorageCombine-Community */; };
 		D8659B4C2D07DBCF009CEE40 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = D8659B4B2D07DBCF009CEE40 /* FirebaseVertexAI */; };
 		D8659B612D07E7A3009CEE40 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = D8659B602D07E7A3009CEE40 /* SideMenu */; };
+		FD673C36BD4E82A0DFDFB87A /* Pods_BirthdayPlanGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777D062D10A5B104F8A485A /* Pods_BirthdayPlanGenerator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272184AF7CDEC40F64633D5A /* Pods-BirthdayPlanGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdayPlanGenerator.release.xcconfig"; path = "Target Support Files/Pods-BirthdayPlanGenerator/Pods-BirthdayPlanGenerator.release.xcconfig"; sourceTree = "<group>"; };
+		8777D062D10A5B104F8A485A /* Pods_BirthdayPlanGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirthdayPlanGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		905B0EF42C2555986FE028F2 /* Pods-BirthdayPlanGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirthdayPlanGenerator.debug.xcconfig"; path = "Target Support Files/Pods-BirthdayPlanGenerator/Pods-BirthdayPlanGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		D8659B092D07D558009CEE40 /* BirthdayPlanGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayPlanGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D8659B0B2D07D558009CEE40 /* BirthdayPlanGenerator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = BirthdayPlanGenerator;
 			sourceTree = "<group>";
 		};
@@ -76,17 +82,38 @@
 				D8659B482D07DBCF009CEE40 /* FirebaseStorage in Frameworks */,
 				D8659B2C2D07DBCF009CEE40 /* FirebaseCore in Frameworks */,
 				D8659B202D07DBCF009CEE40 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				FD673C36BD4E82A0DFDFB87A /* Pods_BirthdayPlanGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040DB57CF2F486AF560F773D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				905B0EF42C2555986FE028F2 /* Pods-BirthdayPlanGenerator.debug.xcconfig */,
+				272184AF7CDEC40F64633D5A /* Pods-BirthdayPlanGenerator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2ED6834C4D5934C652C7D769 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8777D062D10A5B104F8A485A /* Pods_BirthdayPlanGenerator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8659B002D07D558009CEE40 = {
 			isa = PBXGroup;
 			children = (
 				D8659B0B2D07D558009CEE40 /* BirthdayPlanGenerator */,
 				D8659B0A2D07D558009CEE40 /* Products */,
+				040DB57CF2F486AF560F773D /* Pods */,
+				2ED6834C4D5934C652C7D769 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8659B172D07D559009CEE40 /* Build configuration list for PBXNativeTarget "BirthdayPlanGenerator" */;
 			buildPhases = (
+				A122A6A647506FE350DDFA92 /* [CP] Check Pods Manifest.lock */,
 				D8659B052D07D558009CEE40 /* Sources */,
 				D8659B062D07D558009CEE40 /* Frameworks */,
 				D8659B072D07D558009CEE40 /* Resources */,
@@ -195,6 +223,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A122A6A647506FE350DDFA92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BirthdayPlanGenerator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8659B052D07D558009CEE40 /* Sources */ = {
@@ -328,6 +381,7 @@
 		};
 		D8659B182D07D559009CEE40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905B0EF42C2555986FE028F2 /* Pods-BirthdayPlanGenerator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -357,6 +411,7 @@
 		};
 		D8659B192D07D559009CEE40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 272184AF7CDEC40F64633D5A /* Pods-BirthdayPlanGenerator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
